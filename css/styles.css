@@ -1,28 +1,29 @@
 :root {
   /* ---- color tokens ---- */
-  --ink: #14161b;
-  --ink-soft: #262a33;
-  --paper: #ffff;
-  --paper-alt: #ffff;
-  --paper-card: #ffff;
-  --bronze: #c8b1e4;
-  --bronze-dark: #c8b1e4;
+  --ink: #ffff;
+  --ink-soft: #fff;
+  --paper: #fff;
+  --paper-alt: #fff;
+  --paper-card: #fff;
+  --vinotinto: #621919;
+  --vinotinto-dark: #621919;
   --forest: #0b8a7a;
   --forest-light: #18b6a0;
   --indigo: #4338ca;
-  --indigo-light: #6d63f0;
+  --indigo-light: #621919;
   --clay: #e0431f;
-  --clay-light: #c8b1e4;
-  --secondary: #c8b1e4;
+  --clay-light: #621919;
+  --secondary: #621919;
   --border: rgba(21, 23, 28, .1);
   --shadow: 0 30px 80px rgba(21, 23, 28, .1);
   --shadow-soft: 0 18px 40px rgba(21, 23, 28, .08);
   --radius: 32px;
   --container: 1280px;
   --transition: .4s cubic-bezier(.22, 1, .36, 1);
-  --morado-pastel: #c8b1e4;
-  --negro-profundo: #0000;
-  --blanco-gris: #ffffff;
+  --morado-pastel: #621919;
+  --blanco: #fff;
+  --negro: #000;
+  --negro-gris: #212121;
 
   /* signature asymmetric "folded corner" shape, reused sparingly */
   --fold: 120px 24px 120px 24px;
@@ -30,6 +31,7 @@
 }
 
 * {
+  color: var(--ink);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,7 +55,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--blanco-gris);
+  background-color: var(--negro);
   color: #000;
   overflow-x: hidden;
   line-height: 1.7;
@@ -168,7 +170,7 @@ ul {
 
 .header.scrolled,
 body.menu-open .header {
-  background-color: #F5F5F5;
+  background-color: var(--negro);
   backdrop-filter: blur(18px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, .05);
   padding: 18px 0;
@@ -190,7 +192,7 @@ body.menu-open .header {
 .logo-mark {
   width: 36px;
   height: 36px;
-  color: var(--bronze);
+  color: var(--vinotinto);
   flex-shrink: 0;
 }
 
@@ -247,9 +249,8 @@ body.menu-open .header {
 }
 
 .nav-cta:hover {
-   border: 1px solid var(--ink);
    background: var(--ink);
-   color: var(--paper);
+   color: var(--negro);
 }
 
 .menu-toggle {
@@ -286,7 +287,7 @@ body.menu-open .header {
   width: min(360px, 86vw);
   height: 100vh;
   height: 100dvh;
-  background: var(--paper-card);
+  background: var(--negro-gris);
   display: flex;
   flex-direction: column;
   padding: 120px 40px 50px;
@@ -309,7 +310,7 @@ body.menu-open .header {
   justify-content: center;
   margin-top: 10px;
   padding: 16px 26px;
-  background: var(--ink);
+  background: var(--vinotinto);
   color: var(--paper);
   border-radius: 999px;
   font-family: 'Inter', sans-serif;
@@ -366,7 +367,7 @@ body.menu-open {
   font-size: .82rem;
   letter-spacing: 1.5px;
   font-weight: 600;
-  color: var(--bronze);
+  color: var(--vinotinto);
   margin-bottom: 28px;
 }
 
@@ -382,7 +383,7 @@ body.menu-open {
 
 .hero p {
   font-size: 1.15rem;
-  color: #000;
+  color: var(--blanco);
   max-width: 520px;
   margin-bottom: 42px;
 }
@@ -398,8 +399,8 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   padding: 18px 34px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--vinotinto);
+  color: var(--blanco);
   border: none;
   border-radius: 999px;
   font-weight: 600;
@@ -413,7 +414,7 @@ body.menu-open {
 }
 
 .btn-light {
-  background: var(--bronze);
+  background: var(--vinotinto);
   color: var(--paper);
 }
 
@@ -465,15 +466,16 @@ body.menu-open {
   display: block;
   font-size: 2.8rem;
   font-family: 'Fraunces', serif;
-  color: var(--bronze);
+  color: var(--vinotinto);
   margin-bottom: 8px;
 }
 
 .floating-card p {
-  font-size: .92rem;
+  font-weight: 600;
+  font-size: 1rem;
   opacity: .85;
   line-height: 1.5;
-  color: #fff;
+  color: var(--negro);
 }
 
 /* ---------------- manifesto ---------------- */
@@ -509,7 +511,7 @@ body.menu-open {
 
 .manifesto-signature {
   width: 150px;
-  color: var(--bronze);
+  color: var(--vinotinto);
   opacity: .8;
 }
 
@@ -542,7 +544,7 @@ body.menu-open {
 }
 
 .about-content p {
-  color: #000;
+  color: var(--blanco);
   margin-bottom: 20px;
   max-width: 560px;
 }
@@ -559,7 +561,7 @@ body.menu-open {
   display: block;
   font-family: 'Fraunces', serif;
   font-size: 2.1rem;
-  color: var(--bronze);
+  color: var(--vinotinto);
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -667,11 +669,6 @@ body.menu-open {
   height: 18px;
 }
 
-.card-arrow:hover {
-  background: var(--paper);
-  color: var(--ink);
-  border-color: var(--paper);
-}
 
 .bento-card--large {
   grid-row: span 2;
@@ -679,19 +676,19 @@ body.menu-open {
 }
 
 .bento-card--forest {
-  background-color: #000;
+  background-color: var(--vinotinto);
 }
 
 .bento-card--indigo {
-  background: #000;
+  background: var(--negro-gris);
 }
 
 .bento-card--clay {
-  background: #000;
+  background: var(--vinotinto);
 }
 
 .bento-card--ink {
-  background: #000;
+  background-color: var(--negro-gris);
 }
 
 .bento-card--quote {
@@ -702,6 +699,7 @@ body.menu-open {
 }
 
 .bento-card--quote p {
+  color: var(--negro);
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 1.3rem;
@@ -752,7 +750,7 @@ body.menu-open {
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 1.6rem;
-  color: var(--bronze);
+  color: var(--vinotinto);
   margin-bottom: 18px;
 }
 
@@ -789,7 +787,7 @@ body.menu-open {
 
 .results-text p {
   margin-bottom: 22px;
-  color: #000;
+  color: var(--blanco);
   font-size: 1.08rem;
   max-width: 540px;
 }
@@ -816,7 +814,7 @@ body.menu-open {
 .stat-row strong {
   font-family: 'Fraunces', serif;
   font-size: 2.6rem;
-  color: var(--bronze);
+  color: var(--vinotinto);
   min-width: 90px;
 }
 
@@ -848,7 +846,7 @@ body.menu-open {
 .testimonial {
   display: none;
   padding: 54px;
-  background: var(--paper-card);
+  background-color: var(--vinotinto);
   border-radius: 28px 28px 28px 6px;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--border);
@@ -859,6 +857,7 @@ body.menu-open {
 }
 
 .testimonial p {
+  color: var(--blanco);
   font-family: 'Fraunces', serif;
   font-size: 1.45rem;
   font-style: italic;
@@ -872,7 +871,7 @@ body.menu-open {
 }
 
 .testimonial span {
-  color: #000;
+  color: var(--negro);
   font-size: .9rem;
 }
 
@@ -887,14 +886,14 @@ body.menu-open {
   height: 9px;
   border-radius: 50%;
   border: none;
-  background: var(--border);
+  background: var(--vinotinto);
   cursor: pointer;
   padding: 0;
   transition: var(--transition);
 }
 
 .testimonial-dots button.active {
-  background: var(--bronze);
+  background: var(--vinotinto);
   width: 22px;
   border-radius: 5px;
 }
@@ -973,14 +972,14 @@ body.menu-open {
 }
 
 .contact-note {
-  color: #000;
+  color: var(--blanco);
   max-width: 420px;
   margin-bottom: 34px;
 }
 
 .contact-details p {
   margin-bottom: 12px;
-  color: #000;
+  color: var(--blanco);
 }
 
 .contact-details a {
@@ -989,8 +988,8 @@ body.menu-open {
 }
 
 .contact-details a:hover {
-  border-color: var(--bronze);
-  color: var(--bronze);
+  border-color: var(--vinotinto);
+  color: var(--vinotinto);
 }
 
 .contact-form {
@@ -1018,7 +1017,7 @@ body.menu-open {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--bronze);
+  border-color: var(--vinotinto);
 }
 
 .contact-form textarea {
@@ -1030,7 +1029,7 @@ body.menu-open {
   height: 60px;
   padding: 0 28px;
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--vinotinto);
   color: var(--paper);
   font-weight: 600;
   text-decoration: none;
@@ -1076,7 +1075,7 @@ body.menu-open {
 }
 
 .footer p {
-  color: #000;
+  color: var(--blanco);
 }
 
 .footer-nav {
